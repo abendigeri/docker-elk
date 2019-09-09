@@ -1,4 +1,6 @@
 FROM docker.elastic.co/elasticsearch/elasticsearch:7.1.1
-
-RUN CHMOD 777 -r /usr/share/elasticsearch
+WORKDIR /usr/share
+USER root
+RUN chown elasticsearch:root elasticsearch
+RUN chmod 777 -R elasticsearch/
 
